@@ -1,11 +1,10 @@
 import './App.css';
-import ArtifactsDisplayer from '../ArtifactsDisplayer';
+import GenshinDisplayer from '../GenshinDisplayer';
 
 function App() {
   return (
     <div className="App">
-      <p>Good morning</p>
-      <ArtifactsDisplayer />
+      <GenshinDisplayer />
     </div>
   );
 }

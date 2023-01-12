@@ -13,5 +13,11 @@
   margin: 0;
   padding: 0;
   border: none;
-  background-color: var(--clr-sand);
+}
+
+body{
+  background-image: url('C:\Users\GASKU\Documents\CRISTIAN\Estudis\Pràctiques\React\TravelGenshin\src\resources\images\TravelGenshin_Background.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /* background-position: center; */
 }
