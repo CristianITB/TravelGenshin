@@ -26,10 +26,16 @@
   margin: 0;
   padding: 0;
   border: none;
+  font-family: 'genshin_impact_font';
+}
+
+@font-face {
+  font-family: 'genshin_impact_font';
+  src: url('../../resources/fonts/genshin_impact_font.ttf');
 }
 
 body{
-  background-image: url('C:\Users\GASKU\Documents\CRISTIAN\Estudis\Pràctiques\React\TravelGenshin\src\resources\images\TravelGenshin_Background.png');
+  background-image: url('../../resources/images/TravelGenshin_Background.png');
   background-repeat: no-repeat;
   background-size: 100%;
   /* background-position: center; */
