@@ -8,7 +8,7 @@ export const Frame = styled.header`
 `
 
 export const Title = styled.p`
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-align: center;
 `
 
@@ -18,7 +18,7 @@ export const UnorderedList = styled.ul`
     flex-direction: row;
     justify-content: space-around;
     margin: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 `
 
 export const LiElement = styled.li`

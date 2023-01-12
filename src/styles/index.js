@@ -18,7 +18,7 @@ export const travelportTheme = {
     hydro: 'var(--clr-lightBlue)',
     dendro: 'var(--clr-green)',
     oneStar: 'var(--clr-grey)',
-    twoStar: 'var(--clr-lightPurple)',
+    twoStar: 'var(--clr-lightGreen)',
     threeStar: 'var(--clr-blue)',
     fourStar: 'var(--clr-lightPurple)',
     fiveStar: 'var(--clr-gold)',
