@@ -5,7 +5,7 @@ import ArtifactsDisplayer from '../ArtifactsDisplayer'
 import WeaponsDisplayer from '../WeaponsDisplayer'
 import OstsDisplayer from '../OstsDisplayer'
 
-export const GenshinDisplayer = () => {
+export const MainDisplayer = () => {
   const [selectedMenuOption, setSelectedMenuOption] = useState('')
   let ComponentToRender;
 
@@ -38,4 +38,4 @@ export const GenshinDisplayer = () => {
   );
 }
 
-export default GenshinDisplayer
+export default MainDisplayer
