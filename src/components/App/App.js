@@ -1,10 +1,10 @@
 import './App.css';
-import GenshinDisplayer from '../GenshinDisplayer';
+import MainDisplayer from '../MainDisplayer';
 
 function App() {
   return (
     <div className="App">
-      <GenshinDisplayer />
+      <MainDisplayer />
     </div>
   );
 }
