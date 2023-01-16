@@ -1,4 +1,4 @@
-import { Frame, Title, UnorderedList, LiElement } from '../Header/styles'
+import { Frame, Title, UnorderedList, LiElement } from '../../Header/styles'
 import React, { useState, useEffect} from 'react'
 import axios from 'axios'
 import { SingleElementDisplayer } from '../SingleElementDisplayer'

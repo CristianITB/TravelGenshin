@@ -1,4 +1,4 @@
-import { Frame, Title, UnorderedList, LiElement } from '../Header/styles'
+import { Frame, Title, UnorderedList, LiElement } from '../../Header/styles'
 
 export const CharactersOptions = (props) => {
   const handleClick = (event) => {
