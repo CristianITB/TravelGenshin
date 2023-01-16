@@ -1,8 +1,8 @@
 // import { Frame, Title, UnorderedList, LiElement } from '../../Header/styles'
-// import React, { useState, useEffect} from 'react'
-// import axios from 'axios'
 // import { SingleElementDisplayer } from '../SingleElementDisplayer'
+import { useState } from 'react'
 import { useApiData } from '../../../helpers/axios.helper'
+import SingleElementDisplayer from '../SingleElementDisplayer'
 
 // export const SelectedCharacterOption = ({element}) => {
 //   return(
@@ -16,35 +16,62 @@ import { useApiData } from '../../../helpers/axios.helper'
 // }
 
 
-export const SelectedCharacterOption = (props) => {
-  // const [data, setData] = useState(null);
+export const SelectedCharacterOption = ({element}) => {
+  let allElementCharacters = []
 
-  const charactersDataFromApi = useApiData()
-  console.log(charactersDataFromApi[0])
-  // const [charactersDataListState, setCharactersDataListState] = useState([])
-  // const modifyCharactersList = () => {
-  //   setCharactersDataListState([...charactersDataListState, charactersDataFromApi.results[2]])
-  // }
+  const {loading, post} = useApiData()
+  if(loading){
+    console.log(loading, 'cargando')
+  } else {
+      console.log(post[0])
+      allElementCharacters = getAllElementCharacters(element, post)
+  } 
 
-  // useEffect(() => {
-  //     axios.get("https://api.genshin.dev/characters", {
-  //         params: {
-  //             param1: props.names
-  //         }
-  //     }).then(response => {
-  //         setData(response.data);
-  //     });
-  // }, [props]);
+  const [numberOfCharacters, setNumberOfCharacters] = useState(0)
+  const [charactersDataListState, setCharactersDataListState] = useState([])
+
+  const addOneCharacter = () => {
+    if (numberOfCharacters < allElementCharacters.length) {
+      setNumberOfCharacters(numberOfCharacters + 1)
+      setCharactersDataListState([...charactersDataListState, allElementCharacters[numberOfCharacters]])
+    } else if (numberOfCharacters === allElementCharacters.length) {
+      setNumberOfCharacters(0)
+      setCharactersDataListState([])
+    }
+  }
+
+  const showAlCharacters = () => {
+    if(numberOfCharacters === 0){
+    setCharactersDataListState(allElementCharacters)
+    setNumberOfCharacters(allElementCharacters.length)
+    } else{
+      setNumberOfCharacters(0)
+      setCharactersDataListState([])
+    }
+  }
 
   return (
       <div>
-        {/* <button onClick={modifyCharactersList}>Add {props.element} character</button>
-        <button onClick={() => console.log('clicked two')}>Show all {props.element} characters</button>
-          {data && (
-              <SingleElementDisplayer {...data} />
-          )} */}
+        <button onClick={addOneCharacter}>Add {element} character</button>
+        <button onClick={showAlCharacters}>Show all {element} characters</button>
+        <div>
+          {charactersDataListState.map((character, index) => {
+            return <SingleElementDisplayer key={index} character={character}/>
+          })}
+        </div>
       </div>
   );
 }
 
 export default SelectedCharacterOption
+
+
+function getAllElementCharacters(element, allCharactersData){
+  let charactersList = []
+  allCharactersData.forEach(character => {
+    if(character.vision === element){
+      charactersList.push(character)
+    }
+  })
+  return charactersList
+}

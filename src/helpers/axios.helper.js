@@ -1,52 +1,36 @@
 import axios from 'axios'
 import React from 'react'
 
-export function useApiData (baseURL) {
+export function useApiData () {
   const [post, setPost] = React.useState(null)
+  const [loading, setLoading] = React.useState(true)
 
   React.useEffect(() => {
     const fetchData = async () => {
-      const manolo = await GetAllCharactersData()
-      setPost(manolo)
+      const charactersData = await GetAllCharactersData()
+      setPost(charactersData)
+      setLoading(false)
     }
     fetchData()
-  }, [baseURL])
-  return post
-}
-
-async function getCharactersNames(){
-
-   const pepe = await axios.get('https://api.genshin.dev/characters').then((response) => {return response})
-
-  return pepe.data
-}
-
-async function GetOneCharacterInfo(charactersNameList){
-
-  const datachar = await axios.all(charactersNameList.map( async (characterName) => {
-    const prueba = await axios.get('https://api.genshin.dev/characters/'+characterName)
-    return prueba.data
-  }))
-  return datachar
+  }, [])
+  return { post, loading }
 }
 
 async function GetAllCharactersData(){
-  // let allCharactersData = []
   const charactersNames = await getCharactersNames()
-  const datachar = GetOneCharacterInfo(charactersNames)
-  return datachar
-  // if(charactersNames == null){
-
-  // }
-
-  // console.log(charactersNames)
-  // for(let i=0; i<charactersNames.length; i++){
-  //   allCharactersData.push(GetOneCharacterInfo(charactersNames[i]))
-  // }
-
-  // return allCharactersData
+  const allCharactersData = GetOneCharacterInfo(charactersNames)
+  return allCharactersData
 }
 
-function getIt(){
-  
+async function getCharactersNames(){
+  const charactersNames = await axios.get('https://api.genshin.dev/characters').then((response) => {return response})
+  return charactersNames.data
+}
+
+async function GetOneCharacterInfo(charactersNameList){
+  const allCharactersData = await axios.all(charactersNameList.map(async (characterName) => {
+    const oneCharacterData = await axios.get('https://api.genshin.dev/characters/'+characterName)
+    return oneCharacterData.data
+  }))
+  return allCharactersData
 }
