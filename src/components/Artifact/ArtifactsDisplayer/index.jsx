@@ -15,13 +15,13 @@ const handleMenuClick = (menuOption) => {
 
 switch(selectedMenuOption){
   case '4⭐':
-    componentToRender = <SelectedArtifactOption element={'FourStar'} />;
+    componentToRender = <SelectedArtifactOption rarity={'4'} />;
     break
   case '5⭐':
-    componentToRender = <SelectedArtifactOption element={'FiveStar'} />;
+    componentToRender = <SelectedArtifactOption rarity={'5'} />;
     break
   case 'Show all characters':
-    componentToRender = <SelectedArtifactOption element={'Show all'} />;
+    componentToRender = <SelectedArtifactOption rarity={'Show all'} />;
     break
   default:
     componentToRender = null
