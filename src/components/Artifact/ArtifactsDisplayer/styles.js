@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { withTheme } from '../../helpers/styles.helper'
+import { withTheme } from '../../../helpers/styles.helper'
 
 export const Artifact4Star = styled.p`
     ${withTheme('font-style', 'fontStyles.oblique')};
@@ -9,6 +9,7 @@ export const Frame = styled.header`
     font-weight: bold;
     margin: 2rem;
     border-bottom: 5px solid black;
+    margin-top: 1%
 `
 export const ArtifactsDisplayer = styled.div`
     display: flex;
