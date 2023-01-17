@@ -2,7 +2,7 @@ import Header from '../Header'
 import { useState } from 'react'
 import CharactersDisplayer from '../Character/CharactersDisplayer'
 import ArtifactsDisplayer from '../Artifact/ArtifactsDisplayer'
-import WeaponsDisplayer from '../WeaponsDisplayer'
+import WeaponsDisplayer from '../Weapon/WeaponsDisplayer'
 import OstsDisplayer from '../OstsDisplayer'
 
 export const MainDisplayer = () => {

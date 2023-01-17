@@ -1,7 +1,7 @@
 import { UnorderedListArtifacts, ArtifactInfo, ArtifactInfoImage, Artifact4Container, Artifact5Container, ArtifactInfoTitle, ArtifactInfoBonusTitle, ArtifactInfoBonus } from '../ArtifactsDisplayer/styles'
 import React from 'react'
 
-export const SingleElementDisplayer = (props) => {
+export const SingleRarityDisplayer = (props) => {
   const regex = /'|\s/g
   const addImageFallback = (event) => {
     event.currentTarget.src = 'https://api.genshin.dev/artifacts/viridescent-venerer/flower-of-life';
@@ -39,4 +39,4 @@ export const SingleElementDisplayer = (props) => {
   }
 
 
-export default SingleElementDisplayer
+export default SingleRarityDisplayer

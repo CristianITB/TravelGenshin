@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useApiData } from '../Helper/axios.helper'
-import SingleElementDisplayer from '../SingleElementDisplayer'
+import SingleRarityDisplayer from '../SingleRarityDisplayer'
 import { ArtifactsDisplayer, AddNewArtifact, AddAllArtifacts } from '../ArtifactsDisplayer/styles'
 
 export const SelectedArtifactsOption = ({rarity}) => {
@@ -42,7 +42,7 @@ export const SelectedArtifactsOption = ({rarity}) => {
         <AddAllArtifacts onClick={showAllArtifacts}>Show all {rarity}⭐ characters</AddAllArtifacts>
         <ArtifactsDisplayer>
           {artifactsDataListState.map((artifact, index) => {
-            return <SingleElementDisplayer key={index} artifact={artifact}/>
+            return <SingleRarityDisplayer key={index} artifact={artifact}/>
           })}
         </ArtifactsDisplayer>
       </div>
