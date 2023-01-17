@@ -2,12 +2,13 @@ import styled from '@emotion/styled'
 import { withTheme } from '../../../helpers/styles.helper'
 
 export const Frame = styled.div`
+  border: 2px solid #000000;
   display: flex;
   flex-direction: row;
   ${withTheme('margin', 'sizes.rem07')};
   ${withTheme('margin-left', 'sizes.rem15')};
   border: 2px solid black;
-  width: 21.875rem;
+  width: 28rem;
   ${withTheme('padding', 'sizes.rem05')};
   background-color: ${props => 
     props.characterElement === 'Pyro' ? '#EC4923' : 
@@ -19,33 +20,41 @@ export const Frame = styled.div`
     props.characterElement === 'Dendro' ? '#608a00' : 'blue'}
 `
 
+export const CharacterImage = styled.img`
+  ${withTheme('width', 'sizes.rem6')}
+  ${withTheme('height', 'sizes.rem6')}
+  margin-top: 4%;
+`
+
 export const CharacterInfo = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   ${withTheme('padding', 'sizes.rem0625')}
   ${withTheme('margin-left', 'sizes.rem1')}
 `
 
-export const CharacterImage = styled.img`
-  ${withTheme('width', 'sizes.rem6')}
-  ${withTheme('height', 'sizes.rem6')}
-`
-
-export const CharacterName = styled.p`
+export const CharacterInfoTitle = styled.p`
   font-weight: bold;
-  ${withTheme('margin', 'sizes.rem0625')}
+  font-size: 1.3em;
+  margin-top: 2%;
 `
 
-export const CharacterWeapon = styled.p`
-  ${withTheme('margin', 'sizes.rem0')}
+export const ListOfData = styled.ul`
+    margin: 3%;
+    width: 300px;
 `
 
-export const CharacterNation = styled.p`
-  ${withTheme('margin', 'sizes.rem0')}
+export const CharacterWeapon = styled.li`
+  font-size: 0.8em;
+  margin: 2%;
 `
 
-export const CharacterConstellation = styled.p`
-  ${withTheme('margin', 'sizes.rem0')}
+export const CharacterNation = styled.li`
+  font-size: 0.8em;
+  margin: 2%;
+`
+
+export const CharacterConstellation = styled.li`
+  font-size: 0.8em;
+  margin: 2%;
 `

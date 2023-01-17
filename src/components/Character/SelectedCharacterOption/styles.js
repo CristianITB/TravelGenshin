@@ -24,10 +24,9 @@ export const Frame = styled.div`
 
 export const CharactersContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  height: 33.75rem;
   flex-wrap: wrap;
-  width: 100%;
+  height: 100%;
+  width: 100rem;
 `
 
 export const Title = styled.p`
