@@ -6,7 +6,7 @@
   --clr-coral: #FF5E6F;
   --clr-red: #EC4923;
   --clr-darkTurquoise: #359697;
-  --clr-navyBlue: #4682B4;
+  --clr-navyBlue: #359697;
   --clr-softYellow: #debd6c;
   --clr-purple: #945dc4;
   --clr-lightBlue: #00BFFF;
@@ -36,7 +36,7 @@
 
 body{
   background-image: url('../../resources/images/TravelGenshin_Background.png');
-  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: 100%;
   /* background-position: center; */
 }

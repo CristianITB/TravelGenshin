@@ -32,7 +32,7 @@ export const CharactersDisplayer = () => {
     case 'Dendro':
         ComponentToRender = <SelectedCharacterOption element={'Dendro'} />;
         break;
-    case 'Show all characters':
+    case 'Show all':
         ComponentToRender = <SelectedCharacterOption element={'Show all'} />;
         break;
     default:

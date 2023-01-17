@@ -1,31 +1,17 @@
-// import { Frame, Title, UnorderedList, LiElement } from '../../Header/styles'
-// import { SingleElementDisplayer } from '../SingleElementDisplayer'
+import { Frame, Title, ButtonsContainer, AddCharacterButton, ShowAllCharactersButton, CharactersContainer } from './styles'
 import { useState } from 'react'
-import { useApiData } from '../../../helpers/axios.helper'
-import SingleElementDisplayer from '../SingleElementDisplayer'
-
-// export const SelectedCharacterOption = ({element}) => {
-//   return(
-//     <Frame>
-//       <Title>{element} characters</Title>
-//       <button onClick={() => console.log('clicked one')}>Add {element} character</button>
-//       <button onClick={() => console.log('clicked two')}>Show all {element} characters</button>
-
-//     </Frame>
-//   )
-// }
-
+import { useApiData } from '../Api/characters.api'
+import SingleCharacterDisplayer from '../SingleCharacterDisplayer'
 
 export const SelectedCharacterOption = ({element}) => {
   let allElementCharacters = []
+  const showingAllCharacters = (element === "Show all" ? true : false)
+  // Hay que mirar como hacer esto
 
   const {loading, post} = useApiData()
-  if(loading){
-    console.log(loading, 'cargando')
-  } else {
-      console.log(post[0])
-      allElementCharacters = getAllElementCharacters(element, post)
-  } 
+  if(!loading){
+    allElementCharacters = getAllElementCharacters(element, post)
+  }
 
   const [numberOfCharacters, setNumberOfCharacters] = useState(0)
   const [charactersDataListState, setCharactersDataListState] = useState([])
@@ -40,10 +26,13 @@ export const SelectedCharacterOption = ({element}) => {
     }
   }
 
-  const showAlCharacters = () => {
+  const showAllCharacters = () => {
     if(numberOfCharacters === 0){
-    setCharactersDataListState(allElementCharacters)
     setNumberOfCharacters(allElementCharacters.length)
+    setCharactersDataListState(allElementCharacters)
+    } else if(numberOfCharacters > 0 && numberOfCharacters < allElementCharacters.length) {
+      setNumberOfCharacters(allElementCharacters.length)
+      setCharactersDataListState(allElementCharacters)
     } else{
       setNumberOfCharacters(0)
       setCharactersDataListState([])
@@ -51,27 +40,33 @@ export const SelectedCharacterOption = ({element}) => {
   }
 
   return (
-      <div>
-        <button onClick={addOneCharacter}>Add {element} character</button>
-        <button onClick={showAlCharacters}>Show all {element} characters</button>
-        <div>
+      <Frame>
+        <Title>{element} characters</Title>
+        <ButtonsContainer>
+          <AddCharacterButton characterElement={element} onClick={addOneCharacter}>Add {element} character</AddCharacterButton>
+          <ShowAllCharactersButton onClick={showAllCharacters}>Show all {element} characters</ShowAllCharactersButton>
+        </ButtonsContainer>
+        <CharactersContainer>
           {charactersDataListState.map((character, index) => {
-            return <SingleElementDisplayer key={index} character={character}/>
+            return <SingleCharacterDisplayer key={index} character={character}/>
           })}
-        </div>
-      </div>
+        </CharactersContainer>
+      </Frame>
   );
 }
 
 export default SelectedCharacterOption
 
-
 function getAllElementCharacters(element, allCharactersData){
   let charactersList = []
-  allCharactersData.forEach(character => {
-    if(character.vision === element){
-      charactersList.push(character)
-    }
-  })
-  return charactersList
+  if(element === 'Show all'){
+    return allCharactersData
+  } else{
+    allCharactersData.forEach(character => {
+      if(character.vision === element){
+        charactersList.push(character)
+      }
+    })
+    return charactersList
+  }
 }
