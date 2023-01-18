@@ -1,6 +1,6 @@
 import Header from '../Header'
 import { useState } from 'react'
-import CharactersDisplayer from '../CharactersDisplayer'
+import CharactersDisplayer from '../Character/CharactersDisplayer'
 import ArtifactsDisplayer from '../ArtifactsDisplayer'
 import WeaponsDisplayer from '../WeaponsDisplayer'
 import OstsDisplayer from '../OstsDisplayer'
