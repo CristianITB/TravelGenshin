@@ -36,7 +36,6 @@
 
 body{
   background-image: url('../../resources/images/TravelGenshin_Background.png');
-  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: 100%;
-  /* background-position: center; */
 }
