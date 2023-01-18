@@ -1,41 +1,41 @@
 import Header from '../Header'
 import { useState } from 'react'
 import CharactersDisplayer from '../Character/CharactersDisplayer'
-import ArtifactsDisplayer from '../ArtifactsDisplayer'
-import WeaponsDisplayer from '../Weapons/WeaponsDisplayer'
+import ArtifactsDisplayer from '../Artifact/ArtifactsDisplayer'
+import WeaponsDisplayer from '../Weapon/WeaponsDisplayer'
 import OstsDisplayer from '../OstsDisplayer'
 
 export const MainDisplayer = () => {
   const [selectedMenuOption, setSelectedMenuOption] = useState('')
-  let ComponentToRender;
+  let ComponentToRender
 
   const handleMenuClick = (menuOption) => {
-    setSelectedMenuOption(menuOption);
-  };
+    setSelectedMenuOption(menuOption)
+  }
 
   switch (selectedMenuOption) {
     case 'Characters':
-        ComponentToRender = <CharactersDisplayer />;
-        break;
+      ComponentToRender = <CharactersDisplayer />
+      break
     case 'Artifacts':
-        ComponentToRender = <ArtifactsDisplayer />;
-        break;
+      ComponentToRender = <ArtifactsDisplayer />
+      break
     case 'Weapons':
-        ComponentToRender = <WeaponsDisplayer />;
-        break;
+      ComponentToRender = <WeaponsDisplayer />
+      break
     case 'OSTs':
-        ComponentToRender = <OstsDisplayer />;
-        break;
+      ComponentToRender = <OstsDisplayer />
+      break
     default:
-        ComponentToRender = null
+      ComponentToRender = null
   }
 
   return (
     <div>
-       <Header onMenuClick={handleMenuClick}/>
-       { ComponentToRender }
+      <Header onMenuClick={handleMenuClick} />
+      {ComponentToRender}
     </div>
-  );
+  )
 }
 
 export default MainDisplayer

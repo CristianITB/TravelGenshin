@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { withTheme } from '../../../helpers/styles.helper'
 
-export const WeaponsDisplayer = styled.div`
+export const ArtifactsDisplayer = styled.div`
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -15,8 +15,7 @@ export const UnorderedList = styled.ul`
     justify-content: space-around;
     ${withTheme('margin', 'sizes.rem09')};
 `
-
-export const AddNewWeapon = styled.button`
+export const AddNewArtifact = styled.button`
     border: 2px solid #000000;
     border-radius: 10px;
     cursor: pointer;
@@ -25,7 +24,7 @@ export const AddNewWeapon = styled.button`
     ${withTheme('font-size', 'sizes.rem15')};
     ${withTheme('background-color', 'colors.oneStar')};
 `
-export const AddAllWeapons = styled.button`
+export const AddAllArtifacts = styled.button`
     border: 2px solid #000000;
     border-radius: 10px;
     cursor: pointer;

@@ -1,9 +1,8 @@
 import styled from '@emotion/styled'
-import { withTheme } from '../../helpers/styles.helper'
 
 export const Frame = styled.header`
     font-weight: bold;
-    margin: 2rem;
+    margin: 1rem;
     border-bottom: 5px solid black;
 `
 

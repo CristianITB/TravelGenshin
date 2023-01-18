@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react'
 import { useApiData } from '../Api/characters.api'
 import SingleCharacterDisplayer from '../SingleCharacterDisplayer'
 
-export const SelectedCharacterOption = ({element}) => {
+export const SelectedCharacterOption = ({ element }) => {
   let allElementCharacters = []
 
-  const {loading, post} = useApiData()
-  if(!loading){
+  const { loading, post } = useApiData()
+  if (!loading) {
     allElementCharacters = getAllElementCharacters(element, post)
   }
 
@@ -25,13 +25,13 @@ export const SelectedCharacterOption = ({element}) => {
   }
 
   const showAllCharacters = () => {
-    if(numberOfCharacters === 0){
-    setNumberOfCharacters(allElementCharacters.length)
-    setCharactersDataListState(allElementCharacters)
-    } else if(numberOfCharacters > 0 && numberOfCharacters < allElementCharacters.length) {
+    if (numberOfCharacters === 0) {
       setNumberOfCharacters(allElementCharacters.length)
       setCharactersDataListState(allElementCharacters)
-    } else{
+    } else if (numberOfCharacters > 0 && numberOfCharacters < allElementCharacters.length) {
+      setNumberOfCharacters(allElementCharacters.length)
+      setCharactersDataListState(allElementCharacters)
+    } else {
       setNumberOfCharacters(0)
       setCharactersDataListState([])
     }
@@ -43,7 +43,7 @@ export const SelectedCharacterOption = ({element}) => {
   }, [element])
 
   return (
-      <Frame>
+    <Frame>
         <Title>{element} characters</Title>
         <ButtonsContainer>
           <AddCharacterButton characterElement={element} onClick={addOneCharacter}>Add {element} character</AddCharacterButton>
@@ -51,22 +51,22 @@ export const SelectedCharacterOption = ({element}) => {
         </ButtonsContainer>
         <CharactersContainer>
           {charactersDataListState.map((character, index) => {
-            return <SingleCharacterDisplayer key={index} character={character}/>
+            return <SingleCharacterDisplayer key={index} character={character} />
           })}
         </CharactersContainer>
       </Frame>
-  );
+  )
 }
 
 export default SelectedCharacterOption
 
-function getAllElementCharacters(element, allCharactersData){
-  let charactersList = []
-  if(element === 'Show all'){
+function getAllElementCharacters (element, allCharactersData) {
+  const charactersList = []
+  if (element === 'Show all') {
     return allCharactersData
-  } else{
+  } else {
     allCharactersData.forEach(character => {
-      if(character.vision === element){
+      if (character.vision === element) {
         charactersList.push(character)
       }
     })
