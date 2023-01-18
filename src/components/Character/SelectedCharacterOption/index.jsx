@@ -1,12 +1,10 @@
 import { Frame, Title, ButtonsContainer, AddCharacterButton, ShowAllCharactersButton, CharactersContainer } from './styles'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useApiData } from '../Api/characters.api'
 import SingleCharacterDisplayer from '../SingleCharacterDisplayer'
 
 export const SelectedCharacterOption = ({element}) => {
   let allElementCharacters = []
-  const showingAllCharacters = (element === "Show all" ? true : false)
-  // Hay que mirar como hacer esto
 
   const {loading, post} = useApiData()
   if(!loading){
@@ -38,6 +36,11 @@ export const SelectedCharacterOption = ({element}) => {
       setCharactersDataListState([])
     }
   }
+
+  useEffect(() => {
+    setCharactersDataListState([])
+    setNumberOfCharacters(0)
+  }, [element])
 
   return (
       <Frame>

@@ -12,16 +12,16 @@ export const CharactersDisplayer = () => {
 
   switch (selectedMenuOption) {
     case 'Pyro':
-        ComponentToRender = <SelectedCharacterOption element={'Pyro'} />;
+        ComponentToRender = <SelectedCharacterOption element={'Pyro'} showingNew={true} />;
         break;
     case 'Anemo':
-        ComponentToRender = <SelectedCharacterOption element={'Anemo'} />;
+        ComponentToRender = <SelectedCharacterOption element={'Anemo'} showingNew={true} />;
         break;
     case 'Cryo':
-        ComponentToRender = <SelectedCharacterOption element={'Cryo'} />;
+        ComponentToRender = <SelectedCharacterOption element={'Cryo'} showingNew={true} />;
         break;
     case 'Geo':
-        ComponentToRender = <SelectedCharacterOption element={'Geo'} />;
+        ComponentToRender = <SelectedCharacterOption element={'Geo'} showingNew={true} />;
         break;
     case 'Electro':
         ComponentToRender = <SelectedCharacterOption element={'Electro'} />;
