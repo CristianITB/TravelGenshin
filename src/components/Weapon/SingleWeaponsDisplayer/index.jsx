@@ -1,42 +1,35 @@
-import { UnorderedListWeapons, WeaponInfo, WeaponInfoImage, Weapon4Container, Weapon5Container, WeaponInfoTitle, WeaponInfoBonusTitle, WeaponInfoBonus } from '../WeaponsDisplayer/styles'
+import { UnorderedListWeapons, WeaponInfo, WeaponContainer, WeaponStatsDiv, WeaponSubStat, WeaponInfoImage, WeaponAtkStat, WeaponInfoTitle, WeaponInfoBonusTitle, WeaponInfoBonus } from './styles'
 import React from 'react'
 
-export const SingleWeaponsDisplayer = (props) => {
+export const SingleWeaponsDisplayer = ({weapon}) => {
   const regex = /'|\s/g
   const addImageFallback = (event) => {
-    event.currentTarget.src = 'https://api.genshin.dev/weapons/wolf-s-gravestone/icon';
+    weapon.type === 'Claymore' ?
+      event.currentTarget.src = 'https://api.genshin.dev/weapons/wolf-s-gravestone/icon' :
+        weapon.type === 'Bow' ?
+        event.currentTarget.src = 'https://api.genshin.dev/weapons/thundering-pulse/icon' :
+          weapon.type === 'Sword' ?
+          event.currentTarget.src = 'https://api.genshin.dev/weapons/primordial-jade-cutter/icon' :
+            weapon.type === 'Polearm' ?
+            event.currentTarget.src = 'https://api.genshin.dev/weapons/engulfing-lightning/icon' :
+              event.currentTarget.src = 'https://api.genshin.dev/weapons/lost-prayer-to-the-sacred-winds/icon';
   }
     return (
-    //   props.weapon.type === "Sword" 
-    //     ?
-        <Weapon5Container>
-          <WeaponInfoImage src={`https://api.genshin.dev/weapons/${props.weapon.name.toLowerCase().replace(regex, '-')}/icon`} 
+      <WeaponContainer weaponRarity={weapon.rarity}>
+        <WeaponInfoImage src={`https://api.genshin.dev/weapons/${weapon.name.toLowerCase().replace(regex, '-')}/icon`} 
           onError={addImageFallback}/>
             <WeaponInfo>
-              <WeaponInfoTitle>{props.weapon.name}</WeaponInfoTitle>
+              <WeaponInfoTitle>{weapon.name}</WeaponInfoTitle>
               <UnorderedListWeapons>
-                <WeaponInfoBonusTitle>SubStat: </WeaponInfoBonusTitle>
-                <WeaponInfoBonus>{props.weapon.subStat}</WeaponInfoBonus>
-                <WeaponInfoBonusTitle>Passive - {props.weapon.passiveName}: </WeaponInfoBonusTitle>
-                <WeaponInfoBonus>{props.weapon.passiveDesc}</WeaponInfoBonus>
+                <WeaponStatsDiv>
+                  <WeaponAtkStat><b>ATK:</b> {weapon.baseAttack}</WeaponAtkStat>
+                  <WeaponSubStat><b>SubStat:</b> {weapon.subStat}</WeaponSubStat>
+                </WeaponStatsDiv>
+                <WeaponInfoBonusTitle>Passive - {weapon.passiveName}: </WeaponInfoBonusTitle>
+                <WeaponInfoBonus>{weapon.passiveDesc}</WeaponInfoBonus>
             </UnorderedListWeapons>
             </WeaponInfo>
-        </Weapon5Container>
-        // :
-        // <Weapon4Container>
-        //       <WeaponInfoImage src={`https://api.genshin.dev/weapons/${props.weapon.name.toLowerCase().replace(regex, '-')}/icon`}onError={addImageFallback}/>
-        //       <WeaponInfo>
-        //       <WeaponInfoTitle>{props.weapon.name}</WeaponInfoTitle>
-        //       <UnorderedListWeapons>
-        //         <WeaponInfoBonusTitle>2 Piece Bonus: </WeaponInfoBonusTitle>
-        //         <WeaponInfoBonus>{props.weapon['2-piece_bonus'] || props.Weapon['1-piece_bonus']}</WeaponInfoBonus>
-        //         <WeaponInfoBonusTitle>4 Piece Bonus: </WeaponInfoBonusTitle>
-        //         <WeaponInfoBonus>{props.weapon['4-piece_bonus']}</WeaponInfoBonus>
-        //     </UnorderedListWeapons>
-        //     </WeaponInfo>
-        // </Weapon4Container>
+      </WeaponContainer>
     )
   }
-
-
 export default SingleWeaponsDisplayer

@@ -1,7 +1,8 @@
-import { useState } from 'react'
-import { useApiData } from '../Helper/axios.helper'
+import { useState, useEffect } from 'react'
+import { useApiData } from '../Api/weapon.api'
 import SingleWeaponsDisplayer from '../SingleWeaponsDisplayer'
-import { WeaponsDisplayer, AddNewWeapon, AddAllWeapons } from '../WeaponsDisplayer/styles'
+import { WeaponsDisplayer, AddNewWeapon, UnorderedList, AddAllWeapons } from './styles'
+
 
 export const SelectedWeaponsOption = ({type}) => {
   let allTypeWeapons = []
@@ -30,16 +31,26 @@ export const SelectedWeaponsOption = ({type}) => {
     if(numberOfWeapons === 0){
     setWeaponsDataListState(allTypeWeapons)
     setNumberOfWeapons(allTypeWeapons.length)
-    } else{
+    } else if(numberOfWeapons > 0 && numberOfWeapons < allTypeWeapons.length) {
+      setNumberOfWeapons(allTypeWeapons.length)
+      setWeaponsDataListState(allTypeWeapons)
+    }else{
       setNumberOfWeapons(0)
       setWeaponsDataListState([])
     }
   }
 
+  useEffect(() => {
+    setWeaponsDataListState([])
+    setNumberOfWeapons(0)
+  }, [type])
+
   return (
       <div>
-        <AddNewWeapon onClick={addOneWeapon}>Add {type} weapon</AddNewWeapon>
-        <AddAllWeapons onClick={showAllWeapons}>Show all {type} weapons</AddAllWeapons>
+        <UnorderedList>
+          <AddNewWeapon onClick={addOneWeapon}>Add {type} weapon</AddNewWeapon>
+          <AddAllWeapons onClick={showAllWeapons}>Show all {type} weapons</AddAllWeapons>
+        </UnorderedList>
         <WeaponsDisplayer>
           {weaponsDataListState.map((weapon, index) => {
             return <SingleWeaponsDisplayer key={index} weapon={weapon}/>

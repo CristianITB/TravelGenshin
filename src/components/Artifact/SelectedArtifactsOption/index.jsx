@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import { useApiData } from '../Helper/axios.helper'
+import { useState, useEffect } from 'react'
+import { useApiData } from '../Api/artifact.api'
 import SingleRarityDisplayer from '../SingleRarityDisplayer'
-import { ArtifactsDisplayer, AddNewArtifact, AddAllArtifacts } from '../ArtifactsDisplayer/styles'
+import { ArtifactsDisplayer, AddNewArtifact, AddAllArtifacts, UnorderedList } from './styles'
 
 export const SelectedArtifactsOption = ({rarity}) => {
   let allRarityArtifacts = []
@@ -30,16 +30,26 @@ export const SelectedArtifactsOption = ({rarity}) => {
     if(numberOfArtifacts === 0){
     setArtifactsDataListState(allRarityArtifacts)
     setNumberOfArtifacts(allRarityArtifacts.length)
-    } else{
+    } else if(numberOfArtifacts > 0 && numberOfArtifacts < allRarityArtifacts.length) {
+      setNumberOfArtifacts(allRarityArtifacts.length)
+      setArtifactsDataListState(allRarityArtifacts)
+    }else{
       setNumberOfArtifacts(0)
       setArtifactsDataListState([])
     }
   }
 
+  useEffect(() => {
+    setArtifactsDataListState([])
+    setNumberOfArtifacts(0)
+  }, [rarity])
+
   return (
       <div>
-        <AddNewArtifact onClick={addOneArtifact}>Add {rarity}⭐ character</AddNewArtifact>
-        <AddAllArtifacts onClick={showAllArtifacts}>Show all {rarity}⭐ characters</AddAllArtifacts>
+        <UnorderedList>
+          <AddNewArtifact onClick={addOneArtifact}>Add {rarity}⭐ artifact</AddNewArtifact>
+          <AddAllArtifacts onClick={showAllArtifacts}>Show all {rarity}⭐ artifact</AddAllArtifacts>
+        </UnorderedList>
         <ArtifactsDisplayer>
           {artifactsDataListState.map((artifact, index) => {
             return <SingleRarityDisplayer key={index} artifact={artifact}/>

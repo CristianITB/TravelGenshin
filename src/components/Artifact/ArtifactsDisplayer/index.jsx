@@ -14,6 +14,9 @@ const handleMenuClick = (menuOption) => {
 }
 
 switch(selectedMenuOption){
+  case '3⭐':
+    componentToRender = <SelectedArtifactOption rarity={'3'} />;
+    break
   case '4⭐':
     componentToRender = <SelectedArtifactOption rarity={'4'} />;
     break

@@ -1,4 +1,4 @@
-import { Frame, TitleComponent, AddWeapon } from '../WeaponsDisplayer/styles'
+import { Frame, TitleComponent, AddWeapon, UnorderedList } from './styles'
 
 export const WeaponsOptions = (props) => {
   const handleClick = (event) => {
@@ -7,12 +7,14 @@ export const WeaponsOptions = (props) => {
   return(
     <Frame>
         <TitleComponent>Weapons</TitleComponent>
-        <AddWeapon onClick={handleClick}>Claymore</AddWeapon>
-        <AddWeapon onClick={handleClick}>Sword</AddWeapon>
-        <AddWeapon onClick={handleClick}>Catalyst</AddWeapon>
-        <AddWeapon onClick={handleClick}>Bow</AddWeapon>
-        <AddWeapon onClick={handleClick}>Polearm</AddWeapon>
-    </Frame>
+        <UnorderedList>
+          <AddWeapon onClick={handleClick}>Claymore</AddWeapon>
+          <AddWeapon onClick={handleClick}>Sword</AddWeapon>
+          <AddWeapon onClick={handleClick}>Catalyst</AddWeapon>
+          <AddWeapon onClick={handleClick}>Bow</AddWeapon>
+          <AddWeapon onClick={handleClick}>Polearm</AddWeapon>
+        </UnorderedList>
+        </Frame>
   )
 }
 
