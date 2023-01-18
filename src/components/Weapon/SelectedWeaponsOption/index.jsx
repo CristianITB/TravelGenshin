@@ -68,13 +68,3 @@ function getAllTypeWeapons (type, allWeaponsData) {
   })
   return WeaponsList
 }
-
-function getAllTypeWeapons(type, allWeaponsData){
-  let WeaponsList = []
-  allWeaponsData.forEach(weapon => {
-    if(weapon.type === type){
-        WeaponsList.push(weapon)
-    }
-  })
-  return WeaponsList
-}

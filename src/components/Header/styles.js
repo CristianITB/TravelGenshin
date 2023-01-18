@@ -1,14 +1,15 @@
 import styled from '@emotion/styled'
+import { withTheme } from '../../helpers/styles.helper'
 
 export const Frame = styled.header`
-    font-weight: bold;
-    margin: 1rem;
+    ${withTheme('font-weight', 'fontWeight.bold')};
+    ${withTheme('margin', 'sizes.rem1')}
     border-bottom: 5px solid black;
 `
 
 export const Title = styled.p`
-    font-size: 2.5rem;
     text-align: center;
+    ${withTheme('font-size', 'sizes.rem25')};
 `
 
 export const UnorderedList = styled.ul`
@@ -16,8 +17,8 @@ export const UnorderedList = styled.ul`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: 2rem;
-    font-size: 1.3rem;
+    ${withTheme('margin', 'sizes.rem2')}
+    ${withTheme('font-size', 'sizes.rem13')};
 `
 
 export const LiElement = styled.li`

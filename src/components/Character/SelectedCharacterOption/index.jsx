@@ -43,18 +43,18 @@ export const SelectedCharacterOption = ({ element }) => {
   }, [element])
 
   return (
-    <Frame>
-        <Title>{element} characters</Title>
-        <ButtonsContainer>
-          <AddCharacterButton characterElement={element} onClick={addOneCharacter}>Add {element} character</AddCharacterButton>
-          <ShowAllCharactersButton onClick={showAllCharacters}>Show all {element} characters</ShowAllCharactersButton>
-        </ButtonsContainer>
-        <CharactersContainer>
-          {charactersDataListState.map((character, index) => {
-            return <SingleCharacterDisplayer key={index} character={character} />
-          })}
-        </CharactersContainer>
-      </Frame>
+    <div>
+      <Title>{element} characters</Title>
+      <ButtonsContainer>
+        <AddCharacterButton characterElement={element} onClick={addOneCharacter}>Add {element} character</AddCharacterButton>
+        <ShowAllCharactersButton onClick={showAllCharacters}>Show all {element} characters</ShowAllCharactersButton>
+      </ButtonsContainer>
+      <CharactersContainer>
+        {charactersDataListState.map((character, index) => {
+          return <SingleCharacterDisplayer key={index} character={character} />
+        })}
+      </CharactersContainer>
+    </div>
   )
 }
 

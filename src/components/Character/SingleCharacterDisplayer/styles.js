@@ -9,14 +9,20 @@ export const Frame = styled.div`
   ${withTheme('margin-left', 'sizes.rem15')};
   ${withTheme('padding', 'sizes.rem05')};
   width: 28rem;
-  background-color: ${props => 
-    props.characterElement === 'Pyro' ? '#EC4923' : 
-    props.characterElement === 'Hydro' ? '#00BFFF' : 
-    props.characterElement === 'Cryo' ? '#4682B4' : 
-    props.characterElement === 'Electro' ? '#945dc4' : 
-    props.characterElement === 'Anemo' ? '#359697' : 
-    props.characterElement === 'Geo' ? '#debd6c' : 
-    props.characterElement === 'Dendro' ? '#608a00' : 'blue'}
+  background-color: ${props =>
+    props.characterElement === 'Pyro'
+    ? '#EC4923'
+    : props.characterElement === 'Hydro'
+    ? '#00BFFF'
+    : props.characterElement === 'Cryo'
+    ? '#4682B4'
+    : props.characterElement === 'Electro'
+    ? '#945dc4'
+    : props.characterElement === 'Anemo'
+    ? '#359697'
+    : props.characterElement === 'Geo'
+    ? '#debd6c'
+    : props.characterElement === 'Dendro' ? '#608a00' : 'blue'}
 `
 
 export const CharacterImage = styled.img`
@@ -39,8 +45,8 @@ export const CharacterInfoTitle = styled.p`
 `
 
 export const ListOfData = styled.ul`
-  ${withTheme('margin', 'sizes.rem04')}
   width: 18.75rem;
+  ${withTheme('margin', 'sizes.rem04')}
 `
 
 export const CharacterWeapon = styled.li`
