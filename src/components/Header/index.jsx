@@ -4,7 +4,7 @@ export const Header = (props) => {
   const handleClick = (event) => {
     props.onMenuClick(event.target.innerText)
   }
-  return(
+  return (
     <Frame>
       <Title>TravelGenshin</Title>
       <nav>

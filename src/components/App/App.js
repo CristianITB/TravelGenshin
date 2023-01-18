@@ -1,12 +1,12 @@
-import './App.css';
-import MainDisplayer from '../MainDisplayer';
+import './App.css'
+import MainDisplayer from '../MainDisplayer'
 
-function App() {
+function App () {
   return (
-    <div className="App">
+    <div className='App'>
       <MainDisplayer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

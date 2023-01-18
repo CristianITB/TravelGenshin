@@ -1,5 +1,5 @@
 import { Frame, Title, UnorderedList, LiElement } from '../../Header/styles'
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { SingleElementDisplayer } from '../SingleElementDisplayer'
 
@@ -14,27 +14,26 @@ import { SingleElementDisplayer } from '../SingleElementDisplayer'
 //   )
 // }
 
-
 export const SelectedCharacterOption = (props) => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(null)
 
   useEffect(() => {
-      axios.get("https://api.genshin.dev/characters", {
-          params: {
-              param1: props.names
-          }
-      }).then(response => {
-          setData(response.data);
-      });
-  }, [props]);
+    axios.get('https://api.genshin.dev/characters', {
+      params: {
+        param1: props.names
+      }
+    }).then(response => {
+      setData(response.data)
+    })
+  }, [props])
 
   return (
-      <div>
-          {data && (
-              <SingleElementDisplayer {...data} />
-          )}
-      </div>
-  );
+    <div>
+      {data && (
+        <SingleElementDisplayer {...data} />
+      )}
+    </div>
+  )
 }
 
 export default SelectedCharacterOption
