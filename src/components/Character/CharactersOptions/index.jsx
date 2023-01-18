@@ -4,7 +4,7 @@ export const CharactersOptions = (props) => {
   const handleClick = (event) => {
     props.onMenuClick(event.target.innerText)
   }
-  return(
+  return (
     <Frame>
       <Title>Characters</Title>
       <nav>

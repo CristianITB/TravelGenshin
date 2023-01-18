@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 export const CharactersDisplayer = () => {
   const [selectedMenuOption, setSelectedMenuOption] = useState('')
-  let ComponentToRender;
+  let ComponentToRender
 
   const handleMenuClick = (menuOption) => {
     setSelectedMenuOption(menuOption)
@@ -12,37 +12,37 @@ export const CharactersDisplayer = () => {
 
   switch (selectedMenuOption) {
     case 'Pyro':
-        ComponentToRender = <SelectedCharacterOption element={'Pyro'} />;
-        break;
+      ComponentToRender = <SelectedCharacterOption element='Pyro' />
+      break
     case 'Anemo':
-        ComponentToRender = <SelectedCharacterOption element={'Anemo'} />;
-        break;
+      ComponentToRender = <SelectedCharacterOption element='Anemo' />
+      break
     case 'Cryo':
-        ComponentToRender = <SelectedCharacterOption element={'Cryo'} />;
-        break;
+      ComponentToRender = <SelectedCharacterOption element='Cryo' />
+      break
     case 'Geo':
-        ComponentToRender = <SelectedCharacterOption element={'Geo'} />;
-        break;
+      ComponentToRender = <SelectedCharacterOption element='Geo' />
+      break
     case 'Electro':
-        ComponentToRender = <SelectedCharacterOption element={'Electro'} />;
-        break;
+      ComponentToRender = <SelectedCharacterOption element='Electro' />
+      break
     case 'Hydro':
-        ComponentToRender = <SelectedCharacterOption element={'Hydro'} />;
-        break;
+      ComponentToRender = <SelectedCharacterOption element='Hydro' />
+      break
     case 'Dendro':
-        ComponentToRender = <SelectedCharacterOption element={'Dendro'} />;
-        break;
+      ComponentToRender = <SelectedCharacterOption element='Dendro' />
+      break
     case 'Show all characters':
-        ComponentToRender = <SelectedCharacterOption element={'Show all'} />;
-        break;
+      ComponentToRender = <SelectedCharacterOption element='Show all' />
+      break
     default:
-        ComponentToRender = null
+      ComponentToRender = null
   }
 
-  return(
+  return (
     <div>
-      <CharactersOptions onMenuClick={handleMenuClick}/>
-      { ComponentToRender }
+      <CharactersOptions onMenuClick={handleMenuClick} />
+      {ComponentToRender}
     </div>
   )
 }
