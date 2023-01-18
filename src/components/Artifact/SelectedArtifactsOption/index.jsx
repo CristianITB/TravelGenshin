@@ -1,17 +1,15 @@
 import { useState, useEffect } from 'react'
-import { useApiData } from '../Api/artifact.api'
+import { useApiData } from '../Api/artifacts.api'
 import SingleRarityDisplayer from '../SingleRarityDisplayer'
 import { ArtifactsDisplayer, AddNewArtifact, AddAllArtifacts, UnorderedList } from './styles'
 
-export const SelectedArtifactsOption = ({rarity}) => {
+export const SelectedArtifactsOption = ({ rarity }) => {
   let allRarityArtifacts = []
 
-  const {loading, post} = useApiData()
-  if(loading){
-    console.log(loading, 'loading...')
-  } else {
-      allRarityArtifacts = getAllRarityArtifacts(rarity, post)
-  } 
+  const { loading, post } = useApiData()
+  if (!loading) {
+    allRarityArtifacts = getAllRarityArtifacts(rarity, post)
+  }
 
   const [numberOfArtifacts, setNumberOfArtifacts] = useState(0)
   const [artifactsDataListState, setArtifactsDataListState] = useState([])
@@ -27,13 +25,13 @@ export const SelectedArtifactsOption = ({rarity}) => {
   }
 
   const showAllArtifacts = () => {
-    if(numberOfArtifacts === 0){
-    setArtifactsDataListState(allRarityArtifacts)
-    setNumberOfArtifacts(allRarityArtifacts.length)
-    } else if(numberOfArtifacts > 0 && numberOfArtifacts < allRarityArtifacts.length) {
+    if (numberOfArtifacts === 0) {
+      setArtifactsDataListState(allRarityArtifacts)
+      setNumberOfArtifacts(allRarityArtifacts.length)
+    } else if (numberOfArtifacts > 0 && numberOfArtifacts < allRarityArtifacts.length) {
       setNumberOfArtifacts(allRarityArtifacts.length)
       setArtifactsDataListState(allRarityArtifacts)
-    }else{
+    } else {
       setNumberOfArtifacts(0)
       setArtifactsDataListState([])
     }
@@ -45,28 +43,27 @@ export const SelectedArtifactsOption = ({rarity}) => {
   }, [rarity])
 
   return (
-      <div>
-        <UnorderedList>
-          <AddNewArtifact onClick={addOneArtifact}>Add {rarity}⭐ artifact</AddNewArtifact>
-          <AddAllArtifacts onClick={showAllArtifacts}>Show all {rarity}⭐ artifact</AddAllArtifacts>
-        </UnorderedList>
-        <ArtifactsDisplayer>
-          {artifactsDataListState.map((artifact, index) => {
-            return <SingleRarityDisplayer key={index} artifact={artifact}/>
-          })}
-        </ArtifactsDisplayer>
-      </div>
-  );
+    <div>
+      <UnorderedList>
+        <AddNewArtifact onClick={addOneArtifact}>Add {rarity}⭐ artifact</AddNewArtifact>
+        <AddAllArtifacts onClick={showAllArtifacts}>Show all {rarity}⭐ artifact</AddAllArtifacts>
+      </UnorderedList>
+      <ArtifactsDisplayer>
+        {artifactsDataListState.map((artifact, index) => {
+          return <SingleRarityDisplayer key={index} artifact={artifact} />
+        })}
+      </ArtifactsDisplayer>
+    </div>
+  )
 }
 
 export default SelectedArtifactsOption
 
-
-function getAllRarityArtifacts(rarity, allArtifactsData){
-  let artifactsList = []
+function getAllRarityArtifacts (rarity, allArtifactsData) {
+  const artifactsList = []
   allArtifactsData.forEach(artifact => {
-    if(artifact.max_rarity === parseInt(rarity)){
-        artifactsList.push(artifact)
+    if (artifact.max_rarity === parseInt(rarity)) {
+      artifactsList.push(artifact)
     }
   })
   return artifactsList

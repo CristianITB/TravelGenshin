@@ -13,23 +13,23 @@ export const UnorderedList = styled.ul`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: 0.5rem;
+    ${withTheme('margin', 'sizes.rem09')};
 `
 export const AddNewArtifact = styled.button`
     border: 2px solid #000000;
     border-radius: 10px;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 1.5em;
     cursor: pointer;
+    ${withTheme('padding', 'sizes.rem06')};
+    ${withTheme('font-weight', 'fontWeight.bold')};
+    ${withTheme('font-size', 'sizes.rem15')};
     ${withTheme('background-color', 'colors.oneStar')};
 `
 export const AddAllArtifacts = styled.button`
     border: 2px solid #000000;
     border-radius: 10px;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 1.5em;
     cursor: pointer;
+    ${withTheme('padding', 'sizes.rem06')};
+    ${withTheme('font-weight', 'fontWeight.bold')};
+    ${withTheme('font-size', 'sizes.rem15')};
     ${withTheme('background-color', 'colors.showAll')};
 `
