@@ -1,4 +1,4 @@
-import { Frame, Title, ButtonsContainer, AddCharacterButton, ShowAllCharactersButton, CharactersContainer } from './styles'
+import { Title, ButtonsContainer, AddCharacterButton, ShowAllCharactersButton, CharactersContainer } from './styles'
 import { useState, useEffect } from 'react'
 import { useApiData } from '../Api/characters.api'
 import SingleCharacterDisplayer from '../SingleCharacterDisplayer'
