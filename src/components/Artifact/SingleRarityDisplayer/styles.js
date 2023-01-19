@@ -5,8 +5,7 @@ export const ArtifactContainer = styled.div`
     border: 2px solid #000000;
     width: 50rem;
     display: flex;
-    ${withTheme('margin-top', 'sizes.rem03')};
-    ${withTheme('margin-left', 'sizes.rem03')};
+    ${withTheme('margin', 'sizes.rem07')}
     background-color: ${props =>
         props.max_rarity === 1
         ? '#85949c'
@@ -30,6 +29,7 @@ export const ArtifactInfoTitle = styled.p`
 export const UnorderedListArtifacts = styled.ul`
     ${withTheme('margin-top', 'sizes.rem05')};
     ${withTheme('margin-left', 'sizes.rem2')};
+    ${withTheme('margin-bottom', 'sizes.rem2')};
 `
 export const ArtifactInfoBonusTitle = styled.li`
     ${withTheme('font-weight', 'fontWeight.bold')};
