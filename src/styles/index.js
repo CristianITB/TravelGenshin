@@ -39,8 +39,10 @@ export const travelportTheme = {
     rem09: '0.9rem',
     rem1: '1rem',
     rem12: '1.2rem',
+    rem13: '1.3rem',
     rem15: '1.5rem',
     rem2: '2rem',
+    rem25: '2.5rem',
     rem6: '6rem',
     rem0625: '0.625rem'
   },

@@ -16,20 +16,20 @@ export function useApiData () {
   return { post, loading }
 }
 
-async function GetAllWeaponsData(){
+async function GetAllWeaponsData () {
   const weaponsNames = await getWeaponsNames()
   const allWeaponsData = GetOneWeaponInfo(weaponsNames)
   return allWeaponsData
 }
 
-async function getWeaponsNames(){
-  const weaponsNames = await axios.get('https://api.genshin.dev/weapons').then((response) => {return response})
+async function getWeaponsNames () {
+  const weaponsNames = await axios.get('https://api.genshin.dev/weapons').then((response) => { return response })
   return weaponsNames.data
 }
 
-async function GetOneWeaponInfo(weaponsNameList){
+async function GetOneWeaponInfo (weaponsNameList) {
   const allWeaponsData = await axios.all(weaponsNameList.map(async (weaponName) => {
-    const oneWeaponData = await axios.get('https://api.genshin.dev/weapons/'+weaponName)
+    const oneWeaponData = await axios.get('https://api.genshin.dev/weapons/' + weaponName)
     return oneWeaponData.data
   }))
   return allWeaponsData

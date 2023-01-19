@@ -2,11 +2,11 @@ import styled from '@emotion/styled'
 import { withTheme } from '../../../helpers/styles.helper'
 
 export const Frame = styled.header`
-    font-weight: bold;
+    ${withTheme('font-weight', 'fontWeight.bold')};
     border-bottom: 5px solid black;
 `
 export const TitleComponent = styled.p` 
-    font-size: 2em;
+    ${withTheme('font-size', 'sizes.rem2')};
     text-align: center;
 `
 export const UnorderedList = styled.ul`
@@ -14,32 +14,32 @@ export const UnorderedList = styled.ul`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: 0.5rem;
+    ${withTheme('margin', 'sizes.rem09')};
 `
 export const AddThreeStar = styled.button`
     border: 2px solid #000000;
     border-radius: 10px;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 1.5em;
     cursor: pointer;
+    ${withTheme('padding', 'sizes.rem06')};
+    ${withTheme('font-weight', 'fontWeight.bold')};
+    ${withTheme('font-size', 'sizes.rem15')};
     ${withTheme('background-color', 'colors.threeStar')};
 `
 export const AddFourStar = styled.button`
     border: 2px solid #000000;
     border-radius: 10px;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 1.5em;
     cursor: pointer;
+    ${withTheme('padding', 'sizes.rem06')};
+    ${withTheme('font-weight', 'fontWeight.bold')};
+    ${withTheme('font-size', 'sizes.rem15')};
     ${withTheme('background-color', 'colors.fourStar')};
 `
 export const AddFiveStar = styled.button`
     border: 2px solid #000000;
     border-radius: 10px;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 1.5em;
     cursor: pointer;
+    ${withTheme('padding', 'sizes.rem06')};
+    ${withTheme('font-weight', 'fontWeight.bold')};
+    ${withTheme('font-size', 'sizes.rem15')};
     ${withTheme('background-color', 'colors.fiveStar')};
 `

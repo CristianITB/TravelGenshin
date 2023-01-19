@@ -16,20 +16,20 @@ export function useApiData () {
   return { post, loading }
 }
 
-async function GetAllArtifactsData(){
+async function GetAllArtifactsData () {
   const artifactsNames = await getArtifactsNames()
   const allArtifactsData = GetOneArtifactInfo(artifactsNames)
   return allArtifactsData
 }
 
-async function getArtifactsNames(){
-  const artifactsNames = await axios.get('https://api.genshin.dev/artifacts').then((response) => {return response})
+async function getArtifactsNames () {
+  const artifactsNames = await axios.get('https://api.genshin.dev/artifacts').then((response) => { return response })
   return artifactsNames.data
 }
 
-async function GetOneArtifactInfo(artifactsNameList){
+async function GetOneArtifactInfo (artifactsNameList) {
   const allArtifactsData = await axios.all(artifactsNameList.map(async (artifactName) => {
-    const oneArtifactData = await axios.get('https://api.genshin.dev/artifacts/'+artifactName)
+    const oneArtifactData = await axios.get('https://api.genshin.dev/artifacts/' + artifactName)
     return oneArtifactData.data
   }))
   return allArtifactsData
