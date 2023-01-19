@@ -1,30 +1,45 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Spotify from 'spotify-web-api-js'
 import OSTSingleSong from '../OSTSingleSong'
+import { InputBox, SubmitButton } from './styles'
 
 const spotify = new Spotify()
 
-const OSTSearcher = ({playlist}) => {
-    const [song, setSong] = useState([])
-    useEffect(() => {
-        spotify.setAccessToken('BQDVL_H-T_wFL0ZUmZEf1vvqbirvaAat1ix8E2fXbJs1gfetyX2SekLsYzvP1pVyNr2h7Yt1erRF2sgEPfMb6ICEzInG6VurzTgAxRYtEU_eFChYtSuLzjZFvv6b9pbFpn-xzcg0WrV74Ck3iAdvvPFb-zSlfOzEWSO67sZnfJwjlF1rhe7WgVyzmNQwAyLcGMGVYQvlYrqmHUzPh5omNLY')
-        spotify.searchTracks(playlist).then(response => {
+const OSTSearcher = ({ playlist }) => {
+  const [authToken, setAuthToken] = useState(null)
+  const input = useRef(null)
+  const handleClick = () => {
+    setAuthToken(input.current.value)
+  }
+  const [song, setSong] = useState([])
+  useEffect(() => {
+    if (authToken != null) {
+      spotify.setAccessToken(authToken)
+      spotify.searchTracks(playlist).then(response => {
         const tracks = response.tracks.items
         setSong(tracks)
-        })
-    }, [playlist])
-    const songSliced = song.slice(0, 6)
-    return (
-        <div>
-            <div>
-                {songSliced.map((song, index) => {
-                    return <OSTSingleSong key={index} allSongs={song}/>
-                })}
-            </div>
+      })
+    }
+  }, [playlist, authToken])
+  const songSliced = song.slice(0, 6)
+  return (
+    authToken === null
+      ? <div>
+        <InputBox
+          ref={input}
+          type='text'
+          placeholder='Put your token here'
+          id='token'
+          name='token'
+        />
+        <SubmitButton onClick={handleClick}>Click here to submit the Token!</SubmitButton>
         </div>
-    )
+      : <div>
+        {songSliced.map((song, index) => {
+          return <OSTSingleSong key={index} allSongs={song} />
+        })}
+      </div>
+  )
 }
 
 export default OSTSearcher
-
-

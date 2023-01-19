@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { withTheme } from '../../../helpers/styles.helper'
 
 export const SongDisplayer = styled.div`
     border: 2px solid #000000;
@@ -7,11 +6,14 @@ export const SongDisplayer = styled.div`
     height: 10rem;
     margin-top: 1%;
     margin-left: 1%;
-    background-color: ${props => 
-        props.name === 'Genshin Impact - Forest of Jnana and Vidya (Original Game Soundtrack)' ? '#649c74' :
-        props.name === 'Genshin Impact - City of Winds and Idylls (Original Game Soundtrack)' ? '#54a4b4' :
-        props.name === 'Genshin Impact - Realm of Tranquil Eternity (Original Game Soundtrack)' ? '#9174a9' :
-        props.name === 'Genshin Impact - Jade Moon Upon a Sea of Clouds (Original Game Soundtrack)' ? '#dca454' : '#EC4923'
+    background-color: ${props =>
+        props.name === 'Genshin Impact - Forest of Jnana and Vidya (Original Game Soundtrack)'
+? '#649c74'
+        : props.name === 'Genshin Impact - City of Winds and Idylls (Original Game Soundtrack)'
+? '#54a4b4'
+        : props.name === 'Genshin Impact - Realm of Tranquil Eternity (Original Game Soundtrack)'
+? '#9174a9'
+        : props.name === 'Genshin Impact - Jade Moon Upon a Sea of Clouds (Original Game Soundtrack)' ? '#dca454' : '#EC4923'
     };
     display: inline-block;
 `
