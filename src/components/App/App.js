@@ -1,7 +1,7 @@
 import './App.css'
 import MainDisplayer from '../MainDisplayer'
 
-function App () {
+const App = () => {
   return (
     <div className='App'>
       <MainDisplayer />

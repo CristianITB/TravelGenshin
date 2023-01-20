@@ -25,7 +25,7 @@ export const SingleCharacterDisplayer = ({ character }) => {
       <CharacterInfo>
         <CharacterInfoTitle>{character.name}</CharacterInfoTitle>
         <ListOfData>
-          <CharacterWeapon><b>Weapon:</b> {character.weapon}</CharacterWeapon>
+          <CharacterWeapon data-testid='characterWeapon'><b>Weapon:</b> {character.weapon}</CharacterWeapon>
           <CharacterNation><b>Nation:</b> {character.nation}</CharacterNation>
           <CharacterConstellation><b>Constellation:</b> {character.constellation}</CharacterConstellation>
         </ListOfData>
