@@ -4,7 +4,7 @@ const OSTSingleSong = ({ allSongs }) => {
     <SongDisplayer name={allSongs.album.name}>
       <TitleImageDiv>
         <div>
-          <SongArtist href={allSongs.external_urls.spotify}>Artist: {allSongs.artists[0].name}</SongArtist>
+          <SongArtist href={allSongs.external_urls.spotify} target='_blank'>Artist: {allSongs.artists[0].name}</SongArtist>
           <SongName>{allSongs.name}</SongName>
         </div>
         <SongImg alt='Album' src={allSongs.album.images[0].url} />
