@@ -3,7 +3,7 @@ import { useState } from 'react'
 import CharactersDisplayer from '../Character/CharactersDisplayer'
 import ArtifactsDisplayer from '../Artifact/ArtifactsDisplayer'
 import WeaponsDisplayer from '../Weapon/WeaponsDisplayer'
-import OstsDisplayer from '../OstsDisplayer'
+import OstsDisplayer from '../OST/OstsDisplayer'
 
 export const MainDisplayer = () => {
   const [selectedMenuOption, setSelectedMenuOption] = useState('')
