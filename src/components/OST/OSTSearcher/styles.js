@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { withTheme } from '../../../helpers/styles.helper'
 
 export const InputBox = styled.input`
     width: 60vw;
