@@ -3,7 +3,7 @@ import { withTheme } from '../../../helpers/styles.helper'
 
 export const AddCharacterButton = styled.button`
   cursor: pointer;
-  ${withTheme('padding', 'sizes.rem06')};
+  ${withTheme('padding', 'sizes.vw06')};
   background-color: ${props =>
     props.characterElement === 'Pyro'
     ? '#EC4923'
@@ -23,7 +23,7 @@ export const AddCharacterButton = styled.button`
 
 export const ShowAllCharactersButton = styled.button`
   cursor: pointer;
-  ${withTheme('padding', 'sizes.rem06')};
+  ${withTheme('padding', 'sizes.vw06')};
   border: 2px solid black;
   ${withTheme('background-color', 'colors.showAll')};
 `
@@ -32,11 +32,11 @@ export const CharactersContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   height: 100%;
-  width: 100rem;
+  width: 100vw;
 `
 
 export const Title = styled.p`
-  ${withTheme('font-size', 'sizes.rem2')};
+  ${withTheme('font-size', 'sizes.vw2')};
   ${withTheme('font-weight', 'fontWeight.bold')};
   text-align: center;
 `
@@ -45,5 +45,5 @@ export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  ${withTheme('margin-bottom', 'sizes.rem1')};
+  ${withTheme('margin-bottom', 'sizes.vw1')};
 `

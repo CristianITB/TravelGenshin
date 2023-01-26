@@ -3,13 +3,13 @@ import { withTheme } from '../../helpers/styles.helper'
 
 export const Frame = styled.header`
     ${withTheme('font-weight', 'fontWeight.bold')};
-    ${withTheme('margin', 'sizes.rem1')}
-    border-bottom: 5px solid black;
+    ${withTheme('margin', 'sizes.vw1')}
+    border-bottom: 0.5vw solid black;
 `
 
 export const Title = styled.p`
     text-align: center;
-    ${withTheme('font-size', 'sizes.rem25')};
+    ${withTheme('font-size', 'sizes.vw25')};
 `
 
 export const UnorderedList = styled.ul`
@@ -17,8 +17,8 @@ export const UnorderedList = styled.ul`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    ${withTheme('margin', 'sizes.rem2')}
-    ${withTheme('font-size', 'sizes.rem13')};
+    ${withTheme('margin', 'sizes.vw2')}
+    ${withTheme('font-size', 'sizes.vw2')};
 `
 
 export const LiElement = styled.li`

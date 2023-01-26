@@ -1,4 +1,4 @@
-import { SongDisplayer, PreviewSong, PreviewSongDisplayer, TitleImageDiv, SongName, SongArtist, SongImg } from './styles'
+import { SongDisplayer, PreviewSong, PreviewSongDisplayer, TitleImageDiv, SongName, SongArtist, SongImg, SongAudio } from './styles'
 const OSTSingleSong = ({ allSongs }) => {
   return (
     <SongDisplayer name={allSongs.album.name}>
@@ -11,7 +11,9 @@ const OSTSingleSong = ({ allSongs }) => {
       </TitleImageDiv>
       <PreviewSongDisplayer>
         <PreviewSong>Preview Song: </PreviewSong>
-        <audio controls src={allSongs.preview_url} />
+        <div align='center'>
+          <SongAudio controls src={allSongs.preview_url} />
+        </div>
       </PreviewSongDisplayer>
     </SongDisplayer>
   )

@@ -3,11 +3,11 @@ import { withTheme } from '../../../helpers/styles.helper'
 
 export const Frame = styled.header`
     font-weight: bold;
-    ${withTheme('margin', 'sizes.rem2')}
-    border-bottom: 5px solid black;
+    ${withTheme('margin', 'sizes.vw1')};
+    border-bottom: 0.5vw solid black;
 `
 export const TitleComponent = styled.p`
-    ${withTheme('font-size', 'sizes.rem2')};
+    ${withTheme('font-size', 'sizes.vw25')};
     text-align: center;
 `
 export const UnorderedList = styled.ul`
@@ -15,14 +15,14 @@ export const UnorderedList = styled.ul`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    ${withTheme('margin', 'sizes.rem05')}
+    ${withTheme('padding', 'sizes.vw1')};
 `
 export const AddCountry = styled.button`
-    border: 2px solid #000000;
-    border-radius: 10px;
-    ${withTheme('padding', 'sizes.rem06')}
-    ${withTheme('font-weight', 'fontWeight.bold')};
-    ${withTheme('font-size', 'sizes.rem15')};
+    border: 0.3vw solid #000000;
+    ${withTheme('border-radius', 'sizes.vw1')};
+    ${withTheme('padding', 'sizes.vw1')};
+    font-weight: bold;
+    ${withTheme('font-size', 'sizes.vw2')};
     cursor: pointer;
     ${withTheme('background-color', 'colors.oneStar')};
 `

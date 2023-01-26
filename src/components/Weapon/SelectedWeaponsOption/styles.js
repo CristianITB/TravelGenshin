@@ -5,32 +5,30 @@ export const WeaponsDisplayer = styled.div`
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 130rem;
-    margin-left: 5rem;
+    width: 100vw;
 `
 export const UnorderedList = styled.ul`
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    ${withTheme('margin', 'sizes.rem09')};
+    ${withTheme('margin', 'sizes.vw09')};
 `
-
 export const AddNewWeapon = styled.button`
-    border: 2px solid #000000;
-    border-radius: 10px;
+    border: 0.3vw solid #000000;
+    ${withTheme('border-radius', 'sizes.vw1')};
     cursor: pointer;
-    ${withTheme('padding', 'sizes.rem06')};
+    ${withTheme('padding', 'sizes.vw06')};
     ${withTheme('font-weight', 'fontWeight.bold')};
-    ${withTheme('font-size', 'sizes.rem15')};
+    ${withTheme('font-size', 'sizes.vw15')};
     ${withTheme('background-color', 'colors.oneStar')};
 `
 export const AddAllWeapons = styled.button`
-    border: 2px solid #000000;
-    border-radius: 10px;
+    border: 0.3vw solid #000000;
+    ${withTheme('border-radius', 'sizes.vw1')};
     cursor: pointer;
-    ${withTheme('padding', 'sizes.rem06')};
+    ${withTheme('padding', 'sizes.vw06')};
     ${withTheme('font-weight', 'fontWeight.bold')};
-    ${withTheme('font-size', 'sizes.rem15')};
+    ${withTheme('font-size', 'sizes.vw15')};
     ${withTheme('background-color', 'colors.showAll')};
 `

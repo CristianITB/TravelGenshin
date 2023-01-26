@@ -1,18 +1,17 @@
 import styled from '@emotion/styled'
-import { withTheme } from '../../../helpers/styles.helper'
 
 export const InputBox = styled.input`
-    width: 30rem;
+    width: 60vw;
     margin: auto;
     display: block;
-    ${withTheme('padding', 'sizes.rem1')}
+    padding: 1vw;
     border: 2px solid #000000;
 `
 export const SubmitButton = styled.button`
     margin: auto;
-    ${withTheme('padding', 'sizes.rem1')}
+    padding: 1vw;
     display: block;
-    ${withTheme('margin-top', 'sizes.rem09')}
+    margin-top: 1vw;
     border-radius: 20px;
     background-color: black;
     color: white;
