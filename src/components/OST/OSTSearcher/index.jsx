@@ -38,7 +38,7 @@ const OSTSearcher = ({ playlist }) => {
         {songSliced.map((song, index) => {
           return <OSTSingleSong key={index} allSongs={song} />
         })}
-      </div>
+        </div>
   )
 }
 
