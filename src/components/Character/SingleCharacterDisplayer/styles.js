@@ -5,10 +5,10 @@ export const Frame = styled.div`
   border: 2px solid black;
   display: flex;
   flex-direction: row;
-  ${withTheme('margin', 'sizes.rem07')};
-  ${withTheme('margin-left', 'sizes.rem15')};
-  ${withTheme('padding', 'sizes.rem05')};
-  width: 28rem;
+  ${withTheme('margin', 'sizes.vw07')};
+  ${withTheme('margin-left', 'sizes.vw15')};
+  ${withTheme('padding', 'sizes.vw05')};
+  width: 28vw;
   background-color: ${props =>
     props.characterElement === 'Pyro'
     ? '#EC4923'
@@ -26,40 +26,40 @@ export const Frame = styled.div`
 `
 
 export const CharacterImage = styled.img`
-  ${withTheme('width', 'sizes.rem6')}
-  ${withTheme('height', 'sizes.rem6')}
-  ${withTheme('margin-top', 'sizes.rem1')};
+  ${withTheme('width', 'sizes.vw6')}
+  ${withTheme('height', 'sizes.vw6')}
+  ${withTheme('margin-top', 'sizes.vw1')};
 `
 
 export const CharacterInfo = styled.div`
   display: flex;
   flex-direction: column;
-  ${withTheme('padding', 'sizes.rem0625')}
-  ${withTheme('margin-left', 'sizes.rem1')}
+  ${withTheme('padding', 'sizes.vw0625')}
+  ${withTheme('margin-left', 'sizes.vw1')}
 `
 
 export const CharacterInfoTitle = styled.p`
   ${withTheme('font-weight', 'fontWeight.bold')};
-  ${withTheme('font-size', 'sizes.rem13')};
-  ${withTheme('margin-top', 'sizes.rem03')}
+  ${withTheme('font-size', 'sizes.vw13')};
+  ${withTheme('margin-top', 'sizes.vw03')}
 `
 
 export const ListOfData = styled.ul`
-  width: 18.75rem;
-  ${withTheme('margin', 'sizes.rem04')}
+  width: 18.75vw;
+  ${withTheme('margin', 'sizes.vw04')}
 `
 
 export const CharacterWeapon = styled.li`
-  ${withTheme('font-size', 'sizes.rem08')};
-  ${withTheme('margin', 'sizes.rem04')}
+  ${withTheme('font-size', 'sizes.vw08')};
+  ${withTheme('margin', 'sizes.vw04')}
 `
 
 export const CharacterNation = styled.li`
-  ${withTheme('font-size', 'sizes.rem08')};
-  ${withTheme('margin', 'sizes.rem04')}
+  ${withTheme('font-size', 'sizes.vw08')};
+  ${withTheme('margin', 'sizes.vw04')}
 `
 
 export const CharacterConstellation = styled.li`
-  ${withTheme('font-size', 'sizes.rem08')};
-  ${withTheme('margin', 'sizes.rem04')}
+  ${withTheme('font-size', 'sizes.vw08')};
+  ${withTheme('margin', 'sizes.vw04')}
 `
