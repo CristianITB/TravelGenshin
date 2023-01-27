@@ -23,6 +23,7 @@ export const OSTDataDisplayer = () => {
     case 'Sumeru':
       componentToRender = <OSTSearcher playlist='HOYO-MIX Forest of Jnana and Vidya' />
       break
+      
     default:
       componentToRender = null
   }
