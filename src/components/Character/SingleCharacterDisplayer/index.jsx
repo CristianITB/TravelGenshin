@@ -21,10 +21,10 @@ export const SingleCharacterDisplayer = ({ character }) => {
     }
   }
   return (
-    <Frame characterElement={character.vision}>
+    <Frame characterElement={character.vision} data-testid='characterCardFrame'>
       <CharacterImage src={`https://api.genshin.dev/characters/${character.name.toLowerCase().replace(regex, '-')}/icon-big`} alt={character.name} onError={addImageFallback} />
       <CharacterInfo>
-        <CharacterInfoTitle>{character.name}</CharacterInfoTitle>
+        <CharacterInfoTitle data-testid='characterCardName'>{character.name}</CharacterInfoTitle>
         <ListOfData>
           <CharacterWeapon><b>Weapon:</b> {character.weapon}</CharacterWeapon>
           <CharacterNation><b>Nation:</b> {character.nation}</CharacterNation>

@@ -4,6 +4,7 @@ import createComponent from './components.helper'
 
 export const clickComponentByTestId = id => {
   fireEvent.click(screen.getByTestId(id))
+  screen.debug()
 }
 
 export const getElementTextByTestId = id => {
@@ -41,4 +42,9 @@ export const renderComponent = (
     )
   }
   render(<>{newComponent}</>)
+}
+
+export const checkIfDataTestIdExists = testId => {
+  const element = document.querySelector(`[data-testid="${testId}"]`)
+  return element !== null
 }

@@ -20,14 +20,8 @@ const features = loadFeatures('./src/tests/App.feature')
 
 const stepsRef = ({ given, and, when, then }) => {
   let props
-  let clicked
-
-  const clickHandler = () => {
-    clicked = true
-  }
 
   beforeEach(() => {
-    clicked = false
     props = {}
   })
 
@@ -72,6 +66,18 @@ const stepsRef = ({ given, and, when, then }) => {
 
   and(/^the component should show the button show all elements with the following text "(.*)"$/, (text) => {
     expect(testHelper.getElementTextByTestId('showAllElementsButton')).toBe(text)
+  })
+
+  when('the developer clicks on the add element button', () => {
+    testHelper.clickComponentByTestId('addElementButton')
+  })
+
+  then('the component should show the character card', () => {
+    expect(testHelper.checkIfDataTestIdExists('characterCardFrame')).toBe(true)
+  })
+
+  and(/^the card should show the character name "(.*)"$/, (text) => {
+    expect(testHelper.getElementTextByTestId('characterCardName')).toBe(text)
   })
 }
 

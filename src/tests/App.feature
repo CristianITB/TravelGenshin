@@ -25,6 +25,8 @@ Feature: App component
     And the component should show the button show all elements with the following text "Show all Pyro characters"
 
   Scenario: Check if Add Element Button works correctly
+    Given the developer sets the property "element" to "Pyro"
     Given the developer renders the component "SelectedCharacterOption"
     When the developer clicks on the add element button
-    Then the component
+    Then the component should show the character card
+    And the card should show the character name "Amber"
