@@ -13,6 +13,7 @@ export const Header = (props) => {
           <LiElement onClick={handleClick}>Artifacts</LiElement>
           <LiElement onClick={handleClick}>Weapons</LiElement>
           <LiElement onClick={handleClick}>OSTs</LiElement>
+          <LiElement onClick={handleClick}>Test</LiElement>
         </UnorderedList>
       </nav>
     </Frame>

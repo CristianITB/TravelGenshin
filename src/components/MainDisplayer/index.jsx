@@ -4,6 +4,7 @@ import CharactersDisplayer from '../Character/CharactersDisplayer'
 import ArtifactsDisplayer from '../Artifact/ArtifactsDisplayer'
 import WeaponsDisplayer from '../Weapon/WeaponsDisplayer'
 import OstsDisplayer from '../OST/OstsDisplayer'
+import OSTDataDisplayer2 from '../OST copy/OstsDisplayer'
 
 export const MainDisplayer = () => {
   const [selectedMenuOption, setSelectedMenuOption] = useState('')
@@ -26,6 +27,9 @@ export const MainDisplayer = () => {
     case 'OSTs':
       ComponentToRender = <OstsDisplayer />
       break
+    case 'Test':
+      ComponentToRender = <OSTDataDisplayer2 />
+      break  
     default:
       ComponentToRender = null
   }
