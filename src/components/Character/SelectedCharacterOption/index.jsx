@@ -44,10 +44,10 @@ export const SelectedCharacterOption = ({ element }) => {
 
   return (
     <div>
-      <Title>{element} characters</Title>
+      <Title data-testid='selectedCharacterOptionTitle'>{element} characters</Title>
       <ButtonsContainer>
-        <AddCharacterButton characterElement={element} onClick={addOneCharacter}>Add {element} character</AddCharacterButton>
-        <ShowAllCharactersButton onClick={showAllCharacters}>Show all {element} characters</ShowAllCharactersButton>
+        <AddCharacterButton characterElement={element} onClick={addOneCharacter} data-testid='addElementButton'>Add {element} character</AddCharacterButton>
+        <ShowAllCharactersButton onClick={showAllCharacters} data-testid='showAllElementsButton'>Show all {element} characters</ShowAllCharactersButton>
       </ButtonsContainer>
       <CharactersContainer>
         {charactersDataListState.map((character, index) => {

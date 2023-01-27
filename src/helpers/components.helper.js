@@ -1,11 +1,13 @@
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import App from '../components/App'
-import Geek from '../components/Geek'
+import App from '../components/App/App'
+import CharactersDisplayer from '../components/Character/CharactersDisplayer'
+import SelectedCharacterOption from '../components/Character/SelectedCharacterOption'
 
 const Components = {
   app: App,
-  geek: Geek
+  charactersdisplayer: CharactersDisplayer,
+  selectedcharacteroption: SelectedCharacterOption
 }
 
 const createComponent = (

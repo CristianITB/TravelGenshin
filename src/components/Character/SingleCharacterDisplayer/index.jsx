@@ -2,6 +2,7 @@ import { Frame, CharacterInfo, CharacterImage, CharacterInfoTitle, CharacterWeap
 import React from 'react'
 
 export const SingleCharacterDisplayer = ({ character }) => {
+  const regex = /'|\s/g
   const addImageFallback = (event) => {
     if (character.vision === 'Pyro') {
       event.currentTarget.src = 'https://api.genshin.dev/characters/xiangling/icon'
@@ -21,7 +22,7 @@ export const SingleCharacterDisplayer = ({ character }) => {
   }
   return (
     <Frame characterElement={character.vision}>
-      <CharacterImage src={`https://api.genshin.dev/characters/${character.name.toLowerCase()}/icon`} alt={character.name} onError={addImageFallback} />
+      <CharacterImage src={`https://api.genshin.dev/characters/${character.name.toLowerCase().replace(regex, '-')}/icon-big`} alt={character.name} onError={addImageFallback} />
       <CharacterInfo>
         <CharacterInfoTitle>{character.name}</CharacterInfoTitle>
         <ListOfData>

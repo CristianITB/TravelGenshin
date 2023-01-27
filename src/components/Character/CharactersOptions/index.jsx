@@ -9,14 +9,14 @@ export const CharactersOptions = (props) => {
       <Title>Characters</Title>
       <nav>
         <UnorderedList>
-          <LiElement onClick={handleClick}>Pyro</LiElement>
-          <LiElement onClick={handleClick}>Anemo</LiElement>
-          <LiElement onClick={handleClick}>Cryo</LiElement>
-          <LiElement onClick={handleClick}>Geo</LiElement>
-          <LiElement onClick={handleClick}>Electro</LiElement>
-          <LiElement onClick={handleClick}>Hydro</LiElement>
-          <LiElement onClick={handleClick}>Dendro</LiElement>
-          <LiElement onClick={handleClick}>Show all</LiElement>
+          <LiElement onClick={handleClick} data-testid='pyroMenuOption'>Pyro</LiElement>
+          <LiElement onClick={handleClick} data-testid='anemoMenuOption'>Anemo</LiElement>
+          <LiElement onClick={handleClick} data-testid='cryoMenuOption'>Cryo</LiElement>
+          <LiElement onClick={handleClick} data-testid='geoMenuOption'>Geo</LiElement>
+          <LiElement onClick={handleClick} data-testid='electroMenuOption'>Electro</LiElement>
+          <LiElement onClick={handleClick} data-testid='hydroMenuOption'>Hydro</LiElement>
+          <LiElement onClick={handleClick} data-testid='dendroMenuOption'>Dendro</LiElement>
+          <LiElement onClick={handleClick} data-testid='showAllCharactersMenuOption'>Show all</LiElement>
         </UnorderedList>
       </nav>
     </Frame>

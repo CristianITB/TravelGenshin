@@ -9,10 +9,10 @@ export const Header = (props) => {
       <Title>TravelGenshin</Title>
       <nav>
         <UnorderedList>
-          <LiElement onClick={handleClick}>Characters</LiElement>
-          <LiElement onClick={handleClick}>Artifacts</LiElement>
-          <LiElement onClick={handleClick}>Weapons</LiElement>
-          <LiElement onClick={handleClick}>OSTs</LiElement>
+          <LiElement onClick={handleClick} data-testid='charactersMenuOption'>Characters</LiElement>
+          <LiElement onClick={handleClick} data-testid='artifactsMenuOption'>Artifacts</LiElement>
+          <LiElement onClick={handleClick} data-testid='weaponsMenuOption'>Weapons</LiElement>
+          <LiElement onClick={handleClick} data-testid='ostsMenuOption'>OSTs</LiElement>
         </UnorderedList>
       </nav>
     </Frame>
