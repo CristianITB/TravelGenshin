@@ -5,7 +5,7 @@ import SingleCharacterDisplayer from '../SingleCharacterDisplayer'
 
 export const SelectedCharacterOption = ({ element }) => {
   let allElementCharacters = []
-
+  console.log(element, '***********')
   const { loading, post } = useApiData()
   if (!loading) {
     allElementCharacters = getAllElementCharacters(element, post)
@@ -23,7 +23,6 @@ export const SelectedCharacterOption = ({ element }) => {
       setCharactersDataListState([])
     }
   }
-
   const showAllCharacters = () => {
     if (numberOfCharacters === 0) {
       setNumberOfCharacters(allElementCharacters.length)
@@ -63,7 +62,12 @@ export default SelectedCharacterOption
 function getAllElementCharacters (element, allCharactersData) {
   const charactersList = []
   if (element === 'Show all') {
-    return allCharactersData
+    allCharactersData.forEach(character => {
+      if (character.rarity === 4 || character.rarity === 5) {
+        charactersList.push(character)
+      }
+    })
+    console.log(element)
   } else {
     allCharactersData.forEach(character => {
       if (character.vision === element) {
